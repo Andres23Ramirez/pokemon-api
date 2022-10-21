@@ -1,3 +1,3 @@
 class Stat < ApplicationRecord
-  belongs_to :Pokemon
+  belongs_to :pokemon
 end
