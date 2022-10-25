@@ -10,13 +10,13 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons/1
   def show
-    render json: @pokemon
+    render json: @pokemon, include: ['stats']
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokemon
-      @pokemon = Pokemon.find(params[:id])
+      @pokemon = Pokemon.with_stats(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
